@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% load static %} 
+
+{% block title %}Add Category{% endblock %}
+
+{% block content %}
+
+<h3 class="text-center mt-5">Enter a New Category</h3>
+<hr class="container">
+
+{% load crispy_forms_tags %}
+<form class="mt-5" style="width:50%;margin:auto;" method="POST" action="">
+    {% csrf_token %}
+    {{form | crispy }}
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+{% endblock %}
